@@ -1,5 +1,6 @@
 import { Schema, Prop, SchemaFactory } from '@nestjs/mongoose';
-import { Document } from 'mongoose';
+import { Document, Schema as schema } from 'mongoose';
+import { Survey } from '../../survey/schema';
 
 export type UserDocument = User & Document;
 @Schema()
@@ -30,6 +31,9 @@ export class User {
 
   @Prop({ default: new Date() })
   updatedAt: Date;
+
+  @Prop([{ type: schema.Types.ObjectId, ref: Survey.name }])
+  surveys: Array<Survey>;
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);
