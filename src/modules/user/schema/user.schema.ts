@@ -14,7 +14,7 @@ export class User {
   @Prop({ minlength: 5, required: true })
   lastName: string;
 
-  @Prop({ required: true, minlength: 8 })
+  @Prop({ required: true, minlength: 8, unique: true })
   email: string;
 
   @Prop({ required: true })

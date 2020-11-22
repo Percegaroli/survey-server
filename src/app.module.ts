@@ -4,6 +4,6 @@ import { UserModule } from './modules/user';
 import { SurveyModule } from './modules/survey';
 
 @Module({
-  imports: [MongoConnection, UserModule, SurveyModule],
+  imports: [MongoConnection, SurveyModule, UserModule],
 })
 export class AppModule {}
