@@ -1,21 +1,21 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 
 export class NewUserDTO {
-  @ApiProperty()
+  @ApiProperty({ example: 'Rodolfo' })
   name: string;
 
-  @ApiProperty()
+  @ApiProperty({ example: 'Romulo' })
   lastName: string;
 
-  @ApiProperty()
+  @ApiProperty({ example: 'rodolfo1337@gmail.com' })
   email: string;
 
-  @ApiProperty()
+  @ApiProperty({ example: 'rodolfinho123' })
   password: string;
 
-  @ApiPropertyOptional()
+  @ApiPropertyOptional({ example: 'Facebook' })
   company?: string;
 
-  @ApiPropertyOptional()
+  @ApiPropertyOptional({ example: 'Senior Developer' })
   function?: string;
 }
