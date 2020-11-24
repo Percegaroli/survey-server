@@ -2,7 +2,7 @@
 
 ## Stories
 
-- [ ] Usuario pode criar uma nova pesquisa
+- [X] Usuario pode criar uma nova pesquisa
 
 - [ ] Configurar a pesquisa pelo front
 
@@ -14,7 +14,7 @@
 
 - [ ] Data limite para receber respostas
 
-- [ ] Documentar API no Swagger
+- [X] Documentar API no Swagger
 
 - [ ] Notificação por email que uma pesquisa foi concluida.
 
