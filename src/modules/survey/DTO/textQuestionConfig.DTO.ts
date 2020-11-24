@@ -10,6 +10,6 @@ export class TextQuestionConfigDTO {
   })
   minLength: number;
 
-  @ApiProperty()
+  @ApiProperty({ example: true })
   isRequired: boolean;
 }
