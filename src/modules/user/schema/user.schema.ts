@@ -33,7 +33,7 @@ export class User {
   updatedAt: Date;
 
   @Prop([{ type: schema.Types.ObjectId, ref: Survey.name }])
-  surveys: Array<Survey>;
+  surveys: Array<schema.Types.ObjectId>;
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);

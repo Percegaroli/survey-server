@@ -20,7 +20,7 @@ export class Survey {
   endAt: Date;
 
   @Prop({ type: schema.Types.ObjectId, ref: 'User' })
-  owner: User;
+  owner: schema.Types.ObjectId;
 
   @Prop()
   questions: Array<Question>;

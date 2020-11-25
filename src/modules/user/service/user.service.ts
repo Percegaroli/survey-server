@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, BadRequestException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model, Types } from 'mongoose';
 import { User, UserDocument } from '../schema';
@@ -9,7 +9,13 @@ export class UserService {
   constructor(@InjectModel(User.name) private userModel: Model<UserDocument>) {}
 
   async findUserById(id: Types.ObjectId) {
-    return await this.userModel.findById(id);
+    const user = await this.userModel.findById(id);
+    if (!user) {
+      throw new BadRequestException(
+        `User for id: ${id} not found. Please verify your id and try again`,
+      );
+    }
+    return user;
   }
 
   async createNewUser(newUserDTO: NewUserDTO) {
